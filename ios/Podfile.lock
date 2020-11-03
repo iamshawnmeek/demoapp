@@ -1,0 +1,28 @@
+PODS:
+  - button (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - statusbar (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - button (from `.symlinks/plugins/button/ios`)
+  - Flutter (from `Flutter`)
+  - statusbar (from `.symlinks/plugins/statusbar/ios`)
+
+EXTERNAL SOURCES:
+  button:
+    :path: ".symlinks/plugins/button/ios"
+  Flutter:
+    :path: Flutter
+  statusbar:
+    :path: ".symlinks/plugins/statusbar/ios"
+
+SPEC CHECKSUMS:
+  button: d3996842473c6af2b8de3410cbfecae463932ed6
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  statusbar: 7d4f3b27d5e9317b17bc48cbf6046f892bf9ebeb
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.0
