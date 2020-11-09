@@ -24,8 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^0.19.1
-  statusbar: ^1.1.0
-  button: ^0.0.4
+  google_fonts: ^1.1.1  
 
 
 
@@ -54,6 +53,15 @@ flutter:
     - assets/images/facebook.svg
     - assets/images/google.svg
     - assets/images/logo.svg
+    - assets/google_fonts/Merriweather-Black.ttf
+    - assets/google_fonts/Merriweather-BlackItalic.ttf
+    - assets/google_fonts/Merriweather-Bold.ttf
+    - assets/google_fonts/Merriweather-BoldItalic.ttf
+    - assets/google_fonts/Merriweather-Italic.ttf
+    - assets/google_fonts/Merriweather-Light.ttf
+    - assets/google_fonts/Merriweather-LightItalic.ttf
+    - assets/google_fonts/Merriweather-Regular.ttf
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
