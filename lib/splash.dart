@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 // import 'package:button/button.dart';
 
-class MyHomePage extends StatelessWidget {
+class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
