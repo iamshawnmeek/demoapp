@@ -1,5 +1,5 @@
+import 'package:demoapp/landing.dart';
 import 'package:flutter/material.dart';
-import 'package:demoapp/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Color(0xff6E27BC),
       ),
-      home: MyHomePage(),
+      home: Landing(),
     );
   }
 }
