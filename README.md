@@ -1,4 +1,4 @@
-# demoapp
+# Rubric
 
 A new Flutter project.
 
