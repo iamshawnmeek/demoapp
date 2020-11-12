@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Landing extends StatelessWidget {
   static const spacing = 30.0;
@@ -16,12 +17,20 @@ class Landing extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
         child: Padding(
-          //mainAxisAlignment: MainAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.start,
           // super dope, could also be .center to center up
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           padding: const EdgeInsets.all(spacing),
           child: ListView(
             children: <Widget>[
+              SvgPicture.asset(
+                'assets/images/logo.svg',
+                color: Colors.white,
+                semanticsLabel:
+                    'rubric logo', // look into grid view, 11.11.20 //
+                width: 120,
+                alignment: Alignment.centerLeft,
+              ),
               SizedBox(height: spacing),
               RubricCard(),
               SizedBox(height: spacing),
@@ -38,7 +47,7 @@ class Landing extends StatelessWidget {
           ),
         ),
       ),
-    ); 
+    );
   }
 }
 
