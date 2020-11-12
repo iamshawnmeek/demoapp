@@ -16,6 +16,9 @@ class Landing extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
         child: Padding(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          // super dope, could also be .center to center up
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           padding: const EdgeInsets.all(spacing),
           child: ListView(
             children: <Widget>[
