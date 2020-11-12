@@ -38,7 +38,7 @@ class Landing extends StatelessWidget {
           ),
         ),
       ),
-    ); // 11.9.20: working w/ scaffold / body, SafeWidget introduced
+    ); 
   }
 }
 
