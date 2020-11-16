@@ -1,5 +1,6 @@
-import 'package:demoapp/landing.dart';
+// import 'package:demoapp/landing_layout2.dart';
 import 'package:flutter/material.dart';
+import 'package:demoapp/landing.dart';
 // import 'package:demoapp/splash.dart';
 
 void main() {
