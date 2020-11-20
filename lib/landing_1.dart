@@ -2,7 +2,7 @@ import 'package:demoapp/rubric_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Landing extends StatelessWidget {
+class Landing1 extends StatelessWidget {
   static const spacing = 30.0;
 
   @override
@@ -33,7 +33,9 @@ class Landing extends StatelessWidget {
                 alignment: Alignment.centerLeft,
               ),
               SizedBox(height: spacing),
-              RubricCard(),
+              RubricCard(
+                child: Text('textrubric'),
+              ),
               SizedBox(height: spacing),
               Row(
                 children: <Widget>[
