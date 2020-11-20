@@ -33,18 +33,19 @@ class Landing1 extends StatelessWidget {
               ),
               SizedBox(height: spacing),
               RubricCard(
+                height: (355),
                 child: Text('textrubric'),
               ),
               SizedBox(height: spacing),
               Row(
                 children: <Widget>[
-                  Expanded(child: RubricCard()),
+                  Expanded(child: RubricCard(height: 160)),
                   SizedBox(width: spacing),
-                  Expanded(child: RubricCard()),
+                  Expanded(child: RubricCard(height: 160)),
                 ],
               ),
               SizedBox(height: spacing),
-              RubricCard(),
+              RubricCard(height: 360),
             ],
           ),
         ),

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class RubricCard extends StatelessWidget {
   final Widget child;
+  final double height;
   const RubricCard({
     Key key,
     this.child,
+    @required this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final widthFactor = MediaQuery.of(context).size.width * .80;
     return Container(
-      width: widthFactor,
-      height: 230,
+      height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: const Color(0xff8743D3),

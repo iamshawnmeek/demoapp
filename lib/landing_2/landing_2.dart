@@ -1,3 +1,4 @@
+import 'package:demoapp/landing_2/fractional_rubric_card.dart';
 import 'package:demoapp/rubric_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,7 +20,6 @@ class Landing2 extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: ListView(
-            //interesting, when this was column, logo was centered
             children: [
               SvgPicture.asset(
                 'assets/images/logo.svg',
@@ -30,45 +30,18 @@ class Landing2 extends StatelessWidget {
               ),
               SizedBox(height: 30),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xff8743D3),
-                      child: SizedBox(
-                        height: 125,
-                      ),
-                    ),
+                    child: RubricCard(height: 125),
                   ),
                   SizedBox(width: 30),
                   Expanded(
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xff8743D3),
-                      child: Expanded(
-                        child: SizedBox(
-                          height: 125,
-                        ),
-                      ),
-                    ),
+                    child: RubricCard(height: 125),
                   ),
                 ],
               ),
               SizedBox(height: 30),
-              Row(
-                children: [
-                  Expanded(
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xff8743D3),
-                      child: SizedBox(
-                        height: 150,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              RubricCard(height: 125),
               SizedBox(height: 30),
               SizedBox(
                 height: 270,
@@ -76,30 +49,30 @@ class Landing2 extends StatelessWidget {
                   // able to scroll vert
                   scrollDirection: Axis.horizontal,
                   children: [
-                    RubricCard(), //create a new widget that houses these, 11.19
+                    FractionalRubricCard(
+                      height: 275,
+                      variableWidth: .8,
+                    ),
                     SizedBox(width: 30),
-                    RubricCard(),
+                    FractionalRubricCard(
+                      height: 275,
+                      variableWidth: .8,
+                    ),
                     SizedBox(width: 30),
-                    RubricCard(),
+                    FractionalRubricCard(
+                      height: 275,
+                      variableWidth: .8,
+                    ),
                     SizedBox(width: 30),
-                    RubricCard(),
+                    FractionalRubricCard(
+                      height: 275,
+                      variableWidth: .8,
+                    ),
                   ],
                 ),
               ),
               SizedBox(height: 30),
-              Row(
-                children: [
-                  Expanded(
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xff8743D3),
-                      child: SizedBox(
-                        height: 225,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              RubricCard(height: 275),
             ],
           ),
         ),
