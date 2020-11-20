@@ -27,8 +27,7 @@ class Landing1 extends StatelessWidget {
               SvgPicture.asset(
                 'assets/images/logo.svg',
                 color: Colors.white,
-                semanticsLabel:
-                    'rubric logo', // look into grid view, 11.11.20 //
+                semanticsLabel: 'rubric logo',
                 width: 120,
                 alignment: Alignment.centerLeft,
               ),

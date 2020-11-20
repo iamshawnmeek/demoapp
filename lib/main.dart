@@ -1,9 +1,17 @@
 import 'package:demoapp/landing_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 // import 'package:demoapp/landing_1.dart';
 // import 'package:demoapp/splash.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
+    ),
+  );
   runApp(MyApp());
 }
 

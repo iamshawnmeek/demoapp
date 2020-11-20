@@ -9,7 +9,7 @@ class RubricCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final widthFactor = MediaQuery.of(context).size.width * .85;
+    final widthFactor = MediaQuery.of(context).size.width * .80;
     return Container(
       width: widthFactor,
       height: 230,
