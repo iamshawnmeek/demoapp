@@ -1,4 +1,4 @@
-import 'package:demoapp/landing_2/landing_2.dart';
+import 'package:demoapp/landing_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:demoapp/landing_1.dart';
