@@ -1,4 +1,4 @@
-import 'package:demoapp/rubric_card.dart';
+import 'package:demoapp/components/rubric_card.dart';
 import 'package:flutter/material.dart';
 
 class FractionalRubricCard extends StatelessWidget {
