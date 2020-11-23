@@ -21,7 +21,7 @@ class Landing1 extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.start,
           // super dope, could also be .center to center up
           // crossAxisAlignment: CrossAxisAlignment.stretch,
-          padding: const EdgeInsets.all(spacing),
+          padding: const EdgeInsets.all(12.0),
           child: ListView(
             children: <Widget>[
               SvgPicture.asset(
