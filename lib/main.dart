@@ -1,8 +1,7 @@
 // import 'package:demoapp/splash.dart';
-// import 'package:demoapp/landing_1.dart';
+import 'package:demoapp/landing_1.dart';
 // import 'package:demoapp/landing_2.dart';
 // import 'package:demoapp/landing_3.dart';
-import 'package:demoapp/landing_3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Color(0xff6E27BC),
       ),
-      home: Landing3a(),
+      home: Landing1(),
     );
   }
 }

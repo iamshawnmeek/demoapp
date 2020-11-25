@@ -1,9 +1,11 @@
+import 'package:demoapp/components/fractional_rubric_card.dart';
 import 'package:demoapp/components/rubric_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Landing1 extends StatelessWidget {
   static const spacing = 30.0;
+  static const spacing2 = 80.0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,39 +19,95 @@ class Landing1 extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
-        child: Padding(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // super dope, could also be .center to center up
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          padding: const EdgeInsets.all(12.0),
-          child: ListView(
-            children: <Widget>[
-              SvgPicture.asset(
+        child: ListView(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: SvgPicture.asset(
                 'assets/images/logo.svg',
-                color: Colors.white,
+                color: Color(0xff8743D3),
                 semanticsLabel: 'rubric logo',
                 width: 120,
                 alignment: Alignment.centerLeft,
               ),
-              SizedBox(height: spacing),
-              RubricCard(
-                height: (355),
-                child: Text('textrubric'),
+            ),
+            SizedBox(height: spacing2),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Container(
+                height:
+                    (150), // would want to know how to make this auto height / snap height
+                child: Text(
+                  'Grading made simple',
+                  style: TextStyle(
+                      fontSize: 48,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      height: 1.125,
+                      fontFamily: 'Avenir'),
+                ),
               ),
-              SizedBox(height: spacing),
-              Row(
-                children: <Widget>[
-                  Expanded(child: RubricCard(height: 160)),
-                  SizedBox(width: spacing),
-                  Expanded(child: RubricCard(height: 160)),
-                ],
+            ),
+            SizedBox(height: spacing2),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12,
               ),
-              SizedBox(height: spacing),
-              RubricCard(height: 360),
-            ],
-          ),
+              child: Container(
+                child: Text(
+                  'Your rubrics',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: 'Avenir',
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
+            scrollAreaOne(),
+            SizedBox(height: spacing),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: RubricCard(height: 360),
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+Widget scrollAreaOne() {
+  return SizedBox(
+    height: 210,
+    child: ListView(
+      // able to scroll vert
+      scrollDirection: Axis.horizontal,
+      children: [
+        SizedBox(width: 12),
+        FractionalRubricCard(
+          height: 210,
+          variableWidth: .8,
+        ),
+        SizedBox(width: 30),
+        FractionalRubricCard(
+          height: 210,
+          variableWidth: .8,
+        ),
+        SizedBox(width: 30),
+        FractionalRubricCard(
+          height: 210,
+          variableWidth: .8,
+        ),
+        SizedBox(width: 30),
+        FractionalRubricCard(
+          height: 210,
+          variableWidth: .8,
+        ),
+        SizedBox(width: 12),
+      ],
+    ),
+  );
 }

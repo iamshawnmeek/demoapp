@@ -45,6 +45,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: custom_fonts/Avenir-Black.ttf
+          weight: 900
+
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/apple.svg

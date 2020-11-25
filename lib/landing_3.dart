@@ -3,7 +3,7 @@ import 'package:demoapp/components/rubric_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Landing3a extends StatelessWidget {
+class Landing3 extends StatelessWidget {
   static const spacing = 30.0;
   @override
   Widget build(BuildContext context) {
@@ -16,93 +16,115 @@ class Landing3a extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: ListView(
-            children: [
-              SvgPicture.asset(
-                'assets/images/logo.svg',
-                color: Colors.white,
-                semanticsLabel: 'rubric logo',
-                width: 120,
-                alignment: Alignment.centerLeft,
-              ),
-              SizedBox(height: 30),
-              RubricCard(height: 125),
-              SizedBox(height: 30),
-              SizedBox(
-                height: 270,
-                child: ListView(
-                  // able to scroll vert
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    FractionalRubricCard(
-                      height: 275,
-                      variableWidth: .8,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 275,
-                      variableWidth: .8,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 275,
-                      variableWidth: .8,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 275,
-                      variableWidth: .8,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 30),
-              SizedBox(
-                height: 125,
-                child: ListView(
-                  // able to scroll vert
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    FractionalRubricCard(
-                      height: 125,
-                      variableWidth: .3,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 125,
-                      variableWidth: .3,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 125,
-                      variableWidth: .3,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 125,
-                      variableWidth: .3,
-                    ),
-                    SizedBox(width: 30),
-                    FractionalRubricCard(
-                      height: 125,
-                      variableWidth: .3,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 30),
-              Row(
+        child: ListView(
+          children: [
+            logo(),
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: RubricCard(height: 125),
+            ),
+            SizedBox(height: 30),
+            scrollAreaOne(),
+            SizedBox(height: 30),
+            scrollAreaTwo(),
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Row(
                 children: <Widget>[
                   Expanded(child: RubricCard(height: 260)),
                   SizedBox(width: spacing),
                   Expanded(child: RubricCard(height: 260)),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+
+  Widget scrollAreaTwo() {
+    return SizedBox(
+      height: 125,
+      child: ListView(
+        // able to scroll vert
+        scrollDirection: Axis.horizontal,
+        children: [
+          SizedBox(width: 12),
+          FractionalRubricCard(
+            height: 125,
+            variableWidth: .3,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 125,
+            variableWidth: .3,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 125,
+            variableWidth: .3,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 125,
+            variableWidth: .3,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 125,
+            variableWidth: .3,
+          ),
+          SizedBox(width: 12),
+        ],
+      ),
+    );
+  }
+
+  Widget scrollAreaOne() {
+    return SizedBox(
+      height: 210,
+      child: ListView(
+        // able to scroll vert
+        scrollDirection: Axis.horizontal,
+        children: [
+          SizedBox(width: 12),
+          FractionalRubricCard(
+            height: 210,
+            variableWidth: .8,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 210,
+            variableWidth: .8,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 210,
+            variableWidth: .8,
+          ),
+          SizedBox(width: 30),
+          FractionalRubricCard(
+            height: 210,
+            variableWidth: .8,
+          ),
+          SizedBox(width: 12),
+        ],
+      ),
+    );
+  }
+
+  Widget logo() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: SvgPicture.asset(
+        'assets/images/logo.svg',
+        color: Colors.white,
+        semanticsLabel: 'rubric logo',
+        width: 120,
+        alignment: Alignment.centerLeft,
       ),
     );
   }
