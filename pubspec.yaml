@@ -46,7 +46,7 @@ flutter:
   uses-material-design: true
 
   fonts:
-    - family: Avenir
+    - family: Avenir-Black
       fonts:
         - asset: custom_fonts/Avenir-Black.ttf
           weight: 900
@@ -57,6 +57,10 @@ flutter:
     - assets/images/facebook.svg
     - assets/images/google.svg
     - assets/images/logo.svg
+    - assets/images/icon-dashboard.svg
+    - assets/images/icon-favorites.svg
+    - assets/images/icon-recess.svg
+    - assets/images/icon-rubrics.svg
     - assets/google_fonts/Merriweather-Black.ttf
     - assets/google_fonts/Merriweather-BlackItalic.ttf
     - assets/google_fonts/Merriweather-Bold.ttf
