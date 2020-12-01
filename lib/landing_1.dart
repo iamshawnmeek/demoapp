@@ -10,6 +10,10 @@ class Landing1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomPadding: false,
+      extendBodyBehindAppBar: true,
+      extendBody: true,
       // appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
@@ -19,6 +23,7 @@ class Landing1 extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
+        bottom: false,
         child: ListView(
           children: <Widget>[
             Padding(
@@ -72,8 +77,113 @@ class Landing1 extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: RubricCard(height: 360),
             ),
+            SizedBox(height: spacing),
           ],
         ),
+      ),
+
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 10.0,
+        color: Color(0xff2F035F),
+        child: SizedBox(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              // vertical: 12,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/icon-dashboard-default.svg',
+                      semanticsLabel: 'rubric dashboard icon',
+                      width: 32,
+                      color: Colors.white,
+                      alignment: Alignment.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'dashboard',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Avenir-Black',
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/icon-rubrics-default.svg',
+                      semanticsLabel: 'rubric rubrics icon',
+                      width: 32,
+                      color: Colors.white,
+                      alignment: Alignment.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'rubrics',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Avenir-Black',
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/icon-favorites-default.svg',
+                      semanticsLabel: 'rubric favorites icon',
+                      width: 32,
+                      color: Colors.white,
+                      alignment: Alignment.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'favorites',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Avenir-Black',
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/icon-recess-default.svg',
+                      semanticsLabel: 'rubric recess icon',
+                      width: 32,
+                      color: Colors.white,
+                      alignment: Alignment.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'recess',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Avenir-Black',
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          height: 60, //iOS min tap area
+        ),
+        shape: CircularNotchedRectangle(),
       ),
     );
   }

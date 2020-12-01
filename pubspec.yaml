@@ -48,7 +48,7 @@ flutter:
   fonts:
     - family: Avenir-Black
       fonts:
-        - asset: custom_fonts/Avenir-Black.ttf
+        - asset: assets/custom_fonts/Avenir-Black.ttf
           weight: 900
 
   # To add assets to your application, add an assets section, like this:
@@ -57,10 +57,14 @@ flutter:
     - assets/images/facebook.svg
     - assets/images/google.svg
     - assets/images/logo.svg
-    - assets/images/icon-dashboard.svg
-    - assets/images/icon-favorites.svg
-    - assets/images/icon-recess.svg
-    - assets/images/icon-rubrics.svg
+    - assets/images/icon-dashboard-default.svg
+    - assets/images/icon-dashboard-active.svg
+    - assets/images/icon-favorites-default.svg
+    - assets/images/icon-favorites-active.svg
+    - assets/images/icon-recess-default.svg
+    - assets/images/icon-recess-active.svg
+    - assets/images/icon-rubrics-default.svg
+    - assets/images/icon-rubrics-active.svg
     - assets/google_fonts/Merriweather-Black.ttf
     - assets/google_fonts/Merriweather-BlackItalic.ttf
     - assets/google_fonts/Merriweather-Bold.ttf

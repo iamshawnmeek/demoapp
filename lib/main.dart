@@ -1,5 +1,6 @@
 // import 'package:demoapp/splash.dart';
 import 'package:demoapp/landing_1.dart';
+// import 'package:demoapp/painter.dart';
 // import 'package:demoapp/landing_2.dart';
 // import 'package:demoapp/landing_3.dart';
 import 'package:flutter/material.dart';
