@@ -92,91 +92,28 @@ class Landing1 extends StatelessWidget {
               // vertical: 12,
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/icon-dashboard-default.svg',
-                      semanticsLabel: 'rubric dashboard icon',
-                      width: 32,
-                      color: Colors.white,
-                      alignment: Alignment.center,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'dashboard',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Avenir-Black',
-                      ),
-                    ),
-                  ],
+                NavIcon(
+                  assetName: 'assets/images/icon-dashboard-default.svg',
+                  semanticsLabel: 'rubric dashboard icon',
+                  iconText: 'dashboard',
                 ),
-                Column(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/icon-rubrics-default.svg',
-                      semanticsLabel: 'rubric rubrics icon',
-                      width: 32,
-                      color: Colors.white,
-                      alignment: Alignment.center,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'rubrics',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Avenir-Black',
-                      ),
-                    ),
-                  ],
+                NavIcon(
+                  assetName: 'assets/images/icon-rubrics-default.svg',
+                  semanticsLabel: 'rubric rubrics icon',
+                  iconText: 'rubrics',
                 ),
-                Column(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/icon-favorites-default.svg',
-                      semanticsLabel: 'rubric favorites icon',
-                      width: 32,
-                      color: Colors.white,
-                      alignment: Alignment.center,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'favorites',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Avenir-Black',
-                      ),
-                    ),
-                  ],
+                SizedBox(width: 32),
+                NavIcon(
+                  assetName: 'assets/images/icon-favorites-default.svg',
+                  semanticsLabel: 'rubric favorites icon',
+                  iconText: 'favorites',
                 ),
-                Column(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/icon-recess-default.svg',
-                      semanticsLabel: 'rubric recess icon',
-                      width: 32,
-                      color: Colors.white,
-                      alignment: Alignment.center,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'recess',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Avenir-Black',
-                      ),
-                    ),
-                  ],
+                NavIcon(
+                  assetName: 'assets/images/icon-recess-default.svg',
+                  semanticsLabel: 'rubric recess icon',
+                  iconText: 'recess',
                 ),
               ],
             ),
@@ -185,6 +122,43 @@ class Landing1 extends StatelessWidget {
         ),
         shape: CircularNotchedRectangle(),
       ),
+    );
+  }
+}
+
+class NavIcon extends StatelessWidget {
+  final String assetName;
+  final String semanticsLabel;
+  final String iconText;
+
+  const NavIcon({
+    Key key,
+    @required this.assetName,
+    @required this.semanticsLabel,
+    @required this.iconText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SvgPicture.asset(
+          assetName,
+          semanticsLabel: semanticsLabel,
+          width: 32,
+          alignment: Alignment.center,
+        ),
+        SizedBox(height: 10),
+        Text(
+          iconText,
+          style: TextStyle(
+            fontSize: 12,
+            color: Colors.white,
+            fontWeight: FontWeight.w900,
+            fontFamily: 'Avenir-Black',
+          ),
+        ),
+      ],
     );
   }
 }
