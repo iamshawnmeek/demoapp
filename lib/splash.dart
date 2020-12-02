@@ -16,7 +16,7 @@ class Splash extends StatelessWidget {
           children: [
             logo(),
             SizedBox(height: 150),
-            loginButton(),
+            loginButton(context),
             SizedBox(height: 20),
             //row of buttons here //
             Center(
@@ -83,9 +83,9 @@ class Splash extends StatelessWidget {
     );
   }
 
-  Widget loginButton() {
+  Widget loginButton(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Navigator.of(context).pushReplacementNamed('templogin'),
       child: Material(
         textStyle: TextStyle(
           color: Colors.white,
