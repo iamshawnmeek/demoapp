@@ -85,40 +85,36 @@ class Landing1 extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10.0,
         color: Color(0xff2F035F),
-        child: SizedBox(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24,
-              // vertical: 12,
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            NavIcon(
+              defaultAssetName: 'assets/images/icon-dashboard-default.svg',
+              activeAssetName: 'assets/images/icon-dashboard-active.svg',
+              semanticsLabel: 'rubric dashboard icon',
+              iconText: 'dashboard',
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                NavIcon(
-                  assetName: 'assets/images/icon-dashboard-default.svg',
-                  semanticsLabel: 'rubric dashboard icon',
-                  iconText: 'dashboard',
-                ),
-                NavIcon(
-                  assetName: 'assets/images/icon-rubrics-default.svg',
-                  semanticsLabel: 'rubric rubrics icon',
-                  iconText: 'rubrics',
-                ),
-                SizedBox(width: 32),
-                NavIcon(
-                  assetName: 'assets/images/icon-favorites-default.svg',
-                  semanticsLabel: 'rubric favorites icon',
-                  iconText: 'favorites',
-                ),
-                NavIcon(
-                  assetName: 'assets/images/icon-recess-default.svg',
-                  semanticsLabel: 'rubric recess icon',
-                  iconText: 'recess',
-                ),
-              ],
+            NavIcon(
+              defaultAssetName: 'assets/images/icon-rubrics-default.svg',
+              activeAssetName: 'assets/images/icon-rubrics-active.svg',
+              semanticsLabel: 'rubric rubrics icon',
+              iconText: 'rubrics',
             ),
-          ),
-          height: 60, //iOS min tap area
+            NavIcon(
+              defaultAssetName: 'assets/images/icon-favorites-default.svg',
+              activeAssetName: 'assets/images/icon-favorites-active.svg',
+              semanticsLabel: 'rubric favorites icon',
+              iconText: 'favorites',
+            ),
+            NavIcon(
+              defaultAssetName: 'assets/images/icon-recess-default.svg',
+              activeAssetName: 'assets/images/icon-recess-active.svg',
+              semanticsLabel: 'rubric recess icon',
+              iconText: 'recess',
+            ),
+          ],
         ),
         shape: CircularNotchedRectangle(),
       ),
@@ -127,13 +123,15 @@ class Landing1 extends StatelessWidget {
 }
 
 class NavIcon extends StatelessWidget {
-  final String assetName;
+  final String defaultAssetName;
+  final String activeAssetName;
   final String semanticsLabel;
   final String iconText;
 
   const NavIcon({
     Key key,
-    @required this.assetName,
+    @required this.defaultAssetName,
+    @required this.activeAssetName,
     @required this.semanticsLabel,
     @required this.iconText,
   }) : super(key: key);
@@ -141,14 +139,17 @@ class NavIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
+        SizedBox(height: 16),
         SvgPicture.asset(
-          assetName,
+          defaultAssetName,
           semanticsLabel: semanticsLabel,
           width: 32,
+          height: 28,
           alignment: Alignment.center,
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 12),
         Text(
           iconText,
           style: TextStyle(
