@@ -69,30 +69,34 @@ class NavIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GestureDetector(
-        onTap: () => Navigator.of(context).pushReplacementNamed(routeName),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(height: 16),
-            SvgPicture.asset(
-              defaultAssetName,
-              semanticsLabel: semanticsLabel,
-              width: 32,
-              height: 28,
-              alignment: Alignment.center,
-            ),
-            SizedBox(height: 12),
-            Text(
-              iconText,
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.white,
-                fontWeight: FontWeight.w900,
-                fontFamily: 'Avenir-Black',
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () => Navigator.of(context).pushReplacementNamed(routeName),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: 12),
+              SvgPicture.asset(
+                defaultAssetName,
+                semanticsLabel: semanticsLabel,
+                width: 32,
+                height: 28,
+                alignment: Alignment.center,
               ),
-            ),
-          ],
+              SizedBox(height: 12),
+              Text(
+                iconText,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'Avenir-Black',
+                ),
+              ),
+              SizedBox(height: 12),
+            ],
+          ),
         ),
       ),
     );

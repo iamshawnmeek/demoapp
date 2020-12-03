@@ -18,6 +18,7 @@ class Landing2 extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: ListView(

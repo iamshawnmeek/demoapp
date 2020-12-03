@@ -17,6 +17,7 @@ class Landing3 extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
+        bottom: false,
         child: ListView(
           children: [
             logo(),
