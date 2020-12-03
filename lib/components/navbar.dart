@@ -1,3 +1,4 @@
+import 'package:demoapp/rubric_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,6 +21,7 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric dashboard icon',
             iconText: 'dashboard',
             routeName: 'dashboard',
+            isActive: true,
           ),
           NavIcon(
             defaultAssetName: 'assets/images/icon-rubrics-default.svg',
@@ -27,6 +29,7 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric rubrics icon',
             iconText: 'rubrics',
             routeName: 'rubrics',
+            isActive: false,
           ),
           Spacer(),
           NavIcon(
@@ -35,6 +38,7 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric favorites icon',
             iconText: 'favorites',
             routeName: 'favorites',
+            isActive: false,
           ),
           NavIcon(
             defaultAssetName: 'assets/images/icon-recess-default.svg',
@@ -42,6 +46,7 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric recess icon',
             iconText: 'recess',
             routeName: 'recess',
+            isActive: false,
           ),
         ],
       ),
@@ -56,6 +61,7 @@ class NavIcon extends StatelessWidget {
   final String semanticsLabel;
   final String iconText;
   final String routeName;
+  final bool isActive;
 
   const NavIcon({
     Key key,
@@ -64,6 +70,7 @@ class NavIcon extends StatelessWidget {
     @required this.semanticsLabel,
     @required this.iconText,
     @required this.routeName,
+    @required this.isActive,
   }) : super(key: key);
 
   @override
@@ -78,7 +85,7 @@ class NavIcon extends StatelessWidget {
             children: [
               SizedBox(height: 12),
               SvgPicture.asset(
-                defaultAssetName,
+                isActive ? activeAssetName : defaultAssetName,
                 semanticsLabel: semanticsLabel,
                 width: 32,
                 height: 28,
@@ -89,7 +96,7 @@ class NavIcon extends StatelessWidget {
                 iconText,
                 style: TextStyle(
                   fontSize: 12,
-                  color: Colors.white,
+                  color: isActive ? goldenyellow : Colors.white,
                   fontWeight: FontWeight.w900,
                   fontFamily: 'Avenir-Black',
                 ),
