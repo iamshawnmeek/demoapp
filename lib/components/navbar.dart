@@ -1,6 +1,8 @@
 import 'package:demoapp/rubric_colors.dart';
+import 'package:demoapp/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({
@@ -12,13 +14,13 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  String activeRouteName = '';
   void updateActiveRoute(String activeRoute) {
     setState(() => activeRouteName = activeRoute);
   }
 
   @override
   Widget build(BuildContext context) {
+  final ref = //ended on 12.4.20
     return BottomAppBar(
       notchMargin: 10.0,
       color: Color(0xff2F035F),
