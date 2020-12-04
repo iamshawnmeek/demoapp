@@ -1,6 +1,7 @@
 import 'package:demoapp/components/fractional_rubric_card.dart';
 import 'package:demoapp/components/rubric_card.dart';
 import 'package:demoapp/components/navbar.dart';
+import 'package:demoapp/rubric_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,7 +19,7 @@ class Landing1 extends StatelessWidget {
       // appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        backgroundColor: Color(0xFFFFAD00),
+        backgroundColor: goldenyellow,
         foregroundColor: Color(0xFF6E27BC),
         onPressed: () {},
       ),

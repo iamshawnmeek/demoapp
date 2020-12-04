@@ -2,10 +2,20 @@ import 'package:demoapp/rubric_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class NavBar extends StatelessWidget {
+class NavBar extends StatefulWidget {
   const NavBar({
     Key key,
   }) : super(key: key);
+
+  @override
+  _NavBarState createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
+  String activeRouteName = '';
+  void updateActiveRoute(String activeRoute) {
+    setState(() => activeRouteName = activeRoute);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +31,8 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric dashboard icon',
             iconText: 'dashboard',
             routeName: 'dashboard',
-            isActive: true,
+            isActive: activeRouteName == 'dashboard',
+            onTap: updateActiveRoute,
           ),
           NavIcon(
             defaultAssetName: 'assets/images/icon-rubrics-default.svg',
@@ -29,7 +40,8 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric rubrics icon',
             iconText: 'rubrics',
             routeName: 'rubrics',
-            isActive: false,
+            isActive: activeRouteName == 'rubrics',
+            onTap: updateActiveRoute,
           ),
           Spacer(),
           NavIcon(
@@ -38,7 +50,8 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric favorites icon',
             iconText: 'favorites',
             routeName: 'favorites',
-            isActive: false,
+            isActive: activeRouteName == 'favorites',
+            onTap: updateActiveRoute,
           ),
           NavIcon(
             defaultAssetName: 'assets/images/icon-recess-default.svg',
@@ -46,7 +59,8 @@ class NavBar extends StatelessWidget {
             semanticsLabel: 'rubric recess icon',
             iconText: 'recess',
             routeName: 'recess',
-            isActive: false,
+            isActive: activeRouteName == 'recess',
+            onTap: updateActiveRoute,
           ),
         ],
       ),
@@ -62,6 +76,7 @@ class NavIcon extends StatelessWidget {
   final String iconText;
   final String routeName;
   final bool isActive;
+  final void Function(String) onTap;
 
   const NavIcon({
     Key key,
@@ -71,6 +86,7 @@ class NavIcon extends StatelessWidget {
     @required this.iconText,
     @required this.routeName,
     @required this.isActive,
+    @required this.onTap,
   }) : super(key: key);
 
   @override
@@ -79,7 +95,10 @@ class NavIcon extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () => Navigator.of(context).pushReplacementNamed(routeName),
+          onTap: () {
+            onTap(routeName);
+            Navigator.of(context).pushReplacementNamed(routeName);
+          },
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
