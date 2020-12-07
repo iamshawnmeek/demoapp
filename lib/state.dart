@@ -1,3 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/all.dart';
 
-final activeRouteName = Provider<String>((ref) => '');
+final activeRouteNameRef = ChangeNotifierProvider<ValueNotifier<String>>(
+  (ref) => ValueNotifier<String>('dashboard'),
+);

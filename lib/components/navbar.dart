@@ -2,30 +2,21 @@ import 'package:demoapp/rubric_colors.dart';
 import 'package:demoapp/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NavBar extends StatefulWidget {
-  const NavBar({
-    Key key,
-  }) : super(key: key);
-
+class NavBar extends ConsumerWidget {
   @override
-  _NavBarState createState() => _NavBarState();
-}
+  Widget build(BuildContext context, ScopedReader watch) {
+    final ref = watch(activeRouteNameRef);
+    final activeRouteName = ref.value;
+    final updateActiveRoute = (String activeRoute) {
+      ref.value = activeRoute;
+    };
 
-class _NavBarState extends State<NavBar> {
-  void updateActiveRoute(String activeRoute) {
-    setState(() => activeRouteName = activeRoute);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-  final ref = //ended on 12.4.20
     return BottomAppBar(
       notchMargin: 10.0,
       color: Color(0xff2F035F),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           NavIcon(
             defaultAssetName: 'assets/images/icon-dashboard-default.svg',
