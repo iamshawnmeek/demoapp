@@ -1,8 +1,7 @@
+import 'package:demoapp/app.dart';
+import 'package:demoapp/enums.dart';
 import 'package:demoapp/splash.dart';
-// import 'package:demoapp/painter.dart';
-import 'package:demoapp/landing_1.dart';
-import 'package:demoapp/landing_2.dart';
-import 'package:demoapp/landing_3.dart';
+import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,21 +22,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
-        routes: {
-          'templogin': (_) => Landing1(),
-          'dashboard': (_) => Landing1(),
-          'rubrics': (_) => Landing2(),
-          'favorites': (_) => Landing3(),
-          'recess': (_) => Landing3(),
-        },
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
         theme: ThemeData(
           primaryColor: Color(0xff6E27BC),
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Color(0xff6E27BC),
         ),
-        home: Splash(),
+        home: FlowBuilder<MainFlow>(
+          state: MainFlow.splash,
+          onGeneratePages: (mainFlow, pages) {
+            return [
+              if (mainFlow == MainFlow.splash) MaterialPage(child: Splash()),
+              if (mainFlow == MainFlow.app) MaterialPage(child: App()),
+            ];
+          },
+        ),
       ),
     );
   }

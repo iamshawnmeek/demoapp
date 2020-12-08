@@ -1,3 +1,5 @@
+import 'package:demoapp/enums.dart';
+import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +9,8 @@ import 'package:google_fonts/google_fonts.dart';
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final flowController = context.flow<MainFlow>();
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(60),
@@ -16,7 +20,7 @@ class Splash extends StatelessWidget {
           children: [
             logo(),
             SizedBox(height: 150),
-            loginButton(context),
+            loginButton(flowController),
             SizedBox(height: 20),
             //row of buttons here //
             Center(
@@ -83,9 +87,9 @@ class Splash extends StatelessWidget {
     );
   }
 
-  Widget loginButton(BuildContext context) {
+  Widget loginButton(FlowController flowController) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).pushReplacementNamed('templogin'),
+      onTap: () => flowController.update((_) => MainFlow.app),
       child: Material(
         textStyle: TextStyle(
           color: Colors.white,
