@@ -1,6 +1,7 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter_riverpod/all.dart';
+import 'package:demoapp/enums.dart';
+import 'package:flow_builder/flow_builder.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final activeRouteNameRef = ChangeNotifierProvider<ValueNotifier<String>>(
-  (ref) => ValueNotifier<String>('dashboard'),
+final flowControllerRef = Provider.autoDispose(
+  (_) => FlowController<BodyContent>(BodyContent.dashboard),
 );
