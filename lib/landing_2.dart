@@ -4,7 +4,7 @@ import 'package:demoapp/components/rubric_logo.dart';
 import 'package:flutter/material.dart';
 
 class Landing2 extends StatelessWidget {
-  // static const spacing = 30.0;
+  static const spacing = 30.0;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +56,7 @@ class Landing2 extends StatelessWidget {
         ),
         SizedBox(height: 30),
         RubricCard(height: 275),
+        SizedBox(height: spacing),
       ],
     );
   }

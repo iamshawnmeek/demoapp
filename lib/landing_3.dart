@@ -24,6 +24,7 @@ class Landing3 extends StatelessWidget {
             Expanded(child: RubricCard(height: 260)),
           ],
         ),
+        SizedBox(height: spacing),
       ],
     );
   }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class Landing1 extends StatelessWidget {
   static const spacing = 30.0;
-  static const spacing2 = 80.0;
+  static const spacing2 = 90.0;
 
   @override
   Widget build(BuildContext context) {

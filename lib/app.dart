@@ -20,23 +20,44 @@ class App extends StatelessWidget {
       extendBody: true,
       body: SafeArea(
         bottom: false,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          child: FlowBuilder<BodyContent>(
-            controller: flowController,
-            onGeneratePages: (bodyContent, pages) {
-              return [
-                if (bodyContent == BodyContent.dashboard)
-                  MaterialPage(child: Landing1(), fullscreenDialog: true),
-                if (bodyContent == BodyContent.rubrics)
-                  MaterialPage(child: Landing2(), fullscreenDialog: true),
-                if (bodyContent == BodyContent.favorites)
-                  MaterialPage(child: Landing3(), fullscreenDialog: true),
-                if (bodyContent == BodyContent.recess)
-                  MaterialPage(child: Landing3(), fullscreenDialog: true),
-              ];
-            },
-          ),
+        child: FlowBuilder<BodyContent>(
+          controller: flowController,
+          onGeneratePages: (bodyContent, pages) {
+            return [
+              if (bodyContent == BodyContent.dashboard)
+                MaterialPage(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    child: Landing1(),
+                  ),
+                  key: ValueKey('Landing1'),
+                ),
+              if (bodyContent == BodyContent.rubrics)
+                MaterialPage(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    child: Landing2(),
+                  ),
+                  key: ValueKey('Landing2'),
+                ),
+              if (bodyContent == BodyContent.favorites)
+                MaterialPage(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    child: Landing3(),
+                  ),
+                  key: ValueKey('Landing3a'),
+                ),
+              if (bodyContent == BodyContent.recess)
+                MaterialPage(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    child: Landing3(),
+                  ),
+                  key: ValueKey('Landing3b'),
+                ),
+            ];
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
