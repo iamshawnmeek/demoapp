@@ -26,33 +26,13 @@ class App extends StatelessWidget {
           onGeneratePages: (bodyContent, pages) {
             return [
               if (bodyContent == BodyContent.dashboard)
-                FadeInPage(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Landing1(),
-                  ),
-                ),
+                FadeInPage(child: Landing1()),
               if (bodyContent == BodyContent.rubrics)
-                FadeInPage(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Landing2(),
-                  ),
-                ),
+                FadeInPage(child: Landing2()),
               if (bodyContent == BodyContent.favorites)
-                FadeInPage(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Landing3(),
-                  ),
-                ),
+                FadeInPage(child: Landing3()),
               if (bodyContent == BodyContent.recess)
-                FadeInPage(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Landing3(),
-                  ),
-                ),
+                FadeInPage(child: Landing3()),
             ];
           },
         ),

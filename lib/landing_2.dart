@@ -1,3 +1,4 @@
+import 'package:demoapp/components/autopad_list_view.dart';
 import 'package:demoapp/components/fractional_rubric_card.dart';
 import 'package:demoapp/components/rubric_card.dart';
 import 'package:demoapp/components/rubric_logo.dart';
@@ -8,7 +9,7 @@ class Landing2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return AutopadListView(
       children: [
         RubricLogo(),
         SizedBox(height: 30),
@@ -26,32 +27,35 @@ class Landing2 extends StatelessWidget {
         SizedBox(height: 30),
         RubricCard(height: 125),
         SizedBox(height: 30),
-        SizedBox(
-          height: 270,
-          child: ListView(
-            // able to scroll vert
-            scrollDirection: Axis.horizontal,
-            children: [
-              FractionalRubricCard(
-                height: 275,
-                variableWidth: .8,
-              ),
-              SizedBox(width: 30),
-              FractionalRubricCard(
-                height: 275,
-                variableWidth: .8,
-              ),
-              SizedBox(width: 30),
-              FractionalRubricCard(
-                height: 275,
-                variableWidth: .8,
-              ),
-              SizedBox(width: 30),
-              FractionalRubricCard(
-                height: 275,
-                variableWidth: .8,
-              ),
-            ],
+        NoPad(
+          child: SizedBox(
+            height: 270,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                SizedBox(width: 12),
+                FractionalRubricCard(
+                  height: 275,
+                  variableWidth: .8,
+                ),
+                SizedBox(width: 30),
+                FractionalRubricCard(
+                  height: 275,
+                  variableWidth: .8,
+                ),
+                SizedBox(width: 30),
+                FractionalRubricCard(
+                  height: 275,
+                  variableWidth: .8,
+                ),
+                SizedBox(width: 30),
+                FractionalRubricCard(
+                  height: 275,
+                  variableWidth: .8,
+                ),
+                SizedBox(width: 12),
+              ],
+            ),
           ),
         ),
         SizedBox(height: 30),
