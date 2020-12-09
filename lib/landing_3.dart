@@ -1,7 +1,7 @@
 import 'package:demoapp/components/fractional_rubric_card.dart';
 import 'package:demoapp/components/rubric_card.dart';
+import 'package:demoapp/components/rubric_logo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Landing3 extends StatelessWidget {
   static const spacing = 30.0;
@@ -9,26 +9,20 @@ class Landing3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        logo(),
+        RubricLogo(),
         SizedBox(height: 30),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: RubricCard(height: 125),
-        ),
+        RubricCard(height: 125),
         SizedBox(height: 30),
         scrollAreaOne(),
         SizedBox(height: 30),
         scrollAreaTwo(),
         SizedBox(height: 30),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Row(
-            children: <Widget>[
-              Expanded(child: RubricCard(height: 260)),
-              SizedBox(width: spacing),
-              Expanded(child: RubricCard(height: 260)),
-            ],
-          ),
+        Row(
+          children: <Widget>[
+            Expanded(child: RubricCard(height: 260)),
+            SizedBox(width: spacing),
+            Expanded(child: RubricCard(height: 260)),
+          ],
         ),
       ],
     );
@@ -41,7 +35,6 @@ class Landing3 extends StatelessWidget {
         // able to scroll vert
         scrollDirection: Axis.horizontal,
         children: [
-          SizedBox(width: 12),
           FractionalRubricCard(
             height: 125,
             variableWidth: .3,
@@ -66,7 +59,6 @@ class Landing3 extends StatelessWidget {
             height: 125,
             variableWidth: .3,
           ),
-          SizedBox(width: 12),
         ],
       ),
     );
@@ -76,10 +68,8 @@ class Landing3 extends StatelessWidget {
     return SizedBox(
       height: 210,
       child: ListView(
-        // able to scroll vert
         scrollDirection: Axis.horizontal,
         children: [
-          SizedBox(width: 12),
           FractionalRubricCard(
             height: 210,
             variableWidth: .8,
@@ -99,21 +89,7 @@ class Landing3 extends StatelessWidget {
             height: 210,
             variableWidth: .8,
           ),
-          SizedBox(width: 12),
         ],
-      ),
-    );
-  }
-
-  Widget logo() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: SvgPicture.asset(
-        'assets/images/logo.svg',
-        color: Colors.white,
-        semanticsLabel: 'rubric logo',
-        width: 120,
-        alignment: Alignment.centerLeft,
       ),
     );
   }

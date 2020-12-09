@@ -20,20 +20,23 @@ class App extends StatelessWidget {
       extendBody: true,
       body: SafeArea(
         bottom: false,
-        child: FlowBuilder<BodyContent>(
-          controller: flowController,
-          onGeneratePages: (bodyContent, pages) {
-            return [
-              if (bodyContent == BodyContent.dashboard)
-                MaterialPage(child: Landing1()),
-              if (bodyContent == BodyContent.rubrics)
-                MaterialPage(child: Landing2()),
-              if (bodyContent == BodyContent.favorites)
-                MaterialPage(child: Landing3()),
-              if (bodyContent == BodyContent.recess)
-                MaterialPage(child: Landing3()),
-            ];
-          },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: FlowBuilder<BodyContent>(
+            controller: flowController,
+            onGeneratePages: (bodyContent, pages) {
+              return [
+                if (bodyContent == BodyContent.dashboard)
+                  MaterialPage(child: Landing1(), fullscreenDialog: true),
+                if (bodyContent == BodyContent.rubrics)
+                  MaterialPage(child: Landing2(), fullscreenDialog: true),
+                if (bodyContent == BodyContent.favorites)
+                  MaterialPage(child: Landing3(), fullscreenDialog: true),
+                if (bodyContent == BodyContent.recess)
+                  MaterialPage(child: Landing3(), fullscreenDialog: true),
+              ];
+            },
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
