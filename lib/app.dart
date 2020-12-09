@@ -1,5 +1,6 @@
 import 'package:demoapp/components/navbar.dart';
 import 'package:demoapp/enums.dart';
+import 'package:demoapp/fade_in_page.dart';
 import 'package:demoapp/landing_1.dart';
 import 'package:demoapp/landing_2.dart';
 import 'package:demoapp/landing_3.dart';
@@ -25,36 +26,32 @@ class App extends StatelessWidget {
           onGeneratePages: (bodyContent, pages) {
             return [
               if (bodyContent == BodyContent.dashboard)
-                MaterialPage(
+                FadeInPage(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Landing1(),
                   ),
-                  key: ValueKey('Landing1'),
                 ),
               if (bodyContent == BodyContent.rubrics)
-                MaterialPage(
+                FadeInPage(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Landing2(),
                   ),
-                  key: ValueKey('Landing2'),
                 ),
               if (bodyContent == BodyContent.favorites)
-                MaterialPage(
+                FadeInPage(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Landing3(),
                   ),
-                  key: ValueKey('Landing3a'),
                 ),
               if (bodyContent == BodyContent.recess)
-                MaterialPage(
+                FadeInPage(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Landing3(),
                   ),
-                  key: ValueKey('Landing3b'),
                 ),
             ];
           },
