@@ -4,6 +4,8 @@ import 'package:demoapp/fade_in_page.dart';
 import 'package:demoapp/landing_1.dart';
 import 'package:demoapp/landing_2.dart';
 import 'package:demoapp/landing_3.dart';
+import 'package:demoapp/landing_4.dart';
+// import 'package:demoapp/landing_5.dart';
 import 'package:demoapp/rubric_colors.dart';
 import 'package:demoapp/state.dart';
 import 'package:flow_builder/flow_builder.dart';
@@ -32,7 +34,7 @@ class App extends StatelessWidget {
               if (bodyContent == BodyContent.favorites)
                 FadeInPage(child: Landing3()),
               if (bodyContent == BodyContent.recess)
-                FadeInPage(child: Landing3()),
+                FadeInPage(child: Landing4()),
             ];
           },
         ),
