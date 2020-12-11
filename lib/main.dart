@@ -1,5 +1,6 @@
 import 'package:demoapp/app.dart';
 import 'package:demoapp/enums.dart';
+import 'package:demoapp/rubric_colors.dart';
 import 'package:demoapp/splash.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,12 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: Color(0xff6E27BC),
+          primaryColor: darkpurple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: Color(0xff6E27BC),
+          scaffoldBackgroundColor: darkpurple,
+          bottomSheetTheme: BottomSheetThemeData(
+            backgroundColor: darkpurple,
+          ),
         ),
         home: FlowBuilder<MainFlow>(
           state: MainFlow.splash,

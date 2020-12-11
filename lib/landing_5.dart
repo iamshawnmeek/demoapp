@@ -2,7 +2,6 @@ import 'package:demoapp/components/autopad_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:demoapp/components/fractional_rubric_card.dart';
 import 'package:demoapp/components/rubric_card.dart';
-import 'package:demoapp/components/rubric_logo.dart';
 
 class Landing5 extends StatelessWidget {
   static const spacing = 30.0;
@@ -12,8 +11,7 @@ class Landing5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutopadListView(
       children: <Widget>[
-        RubricLogo(),
-        SizedBox(height: spacing2),
+        SizedBox(height: spacing),
         Container(
           height: 150,
           width: 200,
@@ -29,7 +27,7 @@ class Landing5 extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: spacing2),
+        SizedBox(height: spacing),
         Row(
           children: <Widget>[
             Expanded(
